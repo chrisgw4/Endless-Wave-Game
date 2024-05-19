@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dcf4q5utk4lbk"
+path="res://.godot/imported/21_orc_damage_2.wav-31336ad0b9d4af91d5c296255a1350f3.sample"
+
+[deps]
+
+source_file="res://assets/sound effects/minifantasy_dungeon_sound_effects/damage_sound_effects/21_orc_damage_2.wav"
+dest_files=["res://.godot/imported/21_orc_damage_2.wav-31336ad0b9d4af91d5c296255a1350f3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

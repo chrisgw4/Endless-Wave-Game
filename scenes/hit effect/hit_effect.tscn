@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfclb2hus3pug"]
+
+[ext_resource type="Texture2D" uid="uid://xwfjpbdurxpu" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/hit_effect_anim_f0.png" id="1_80q2p"]
+[ext_resource type="Script" path="res://scenes/hit effect/hit_effect.gd" id="1_wm2ew"]
+[ext_resource type="Texture2D" uid="uid://c7orr4206wow1" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/hit_effect_anim_f1.png" id="2_ij6em"]
+[ext_resource type="Texture2D" uid="uid://e1cfkw0fag5a" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/hit_effect_anim_f2.png" id="3_e3u6h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywegi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_80q2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ij6em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e3u6h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_iyyjc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_3rrd5"]
+resource_name = "hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cqrhj"]
+_data = {
+"RESET": SubResource("Animation_iyyjc"),
+"hit": SubResource("Animation_3rrd5")
+}
+
+[node name="HitEffect" type="Node2D"]
+script = ExtResource("1_wm2ew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ywegi")
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cqrhj")
+}

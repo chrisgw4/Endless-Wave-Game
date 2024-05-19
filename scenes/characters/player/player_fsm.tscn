@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://mx7djesok40h"]
+
+[ext_resource type="PackedScene" uid="uid://facia08iryr6" path="res://scenes/components/FSM/FSM.tscn" id="1_lquud"]
+[ext_resource type="Script" path="res://scenes/characters/player/player_fsm.gd" id="2_tfysq"]
+
+[node name="PlayerFSM" instance=ExtResource("1_lquud")]
+script = ExtResource("2_tfysq")

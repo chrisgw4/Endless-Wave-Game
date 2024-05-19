@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckpwwh0s1rddp"]
+
+[ext_resource type="Script" path="res://scenes/components/UI numbers/number_ui_component.gd" id="1_qhsbb"]
+
+[node name="NumberUIComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qhsbb")
+
+[node name="AccessorySprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1e-05, 1e-05)
+
+[node name="NumberHolder" type="Node2D" parent="."]

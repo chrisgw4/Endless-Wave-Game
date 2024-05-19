@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b363736lp8ik"
+path="res://.godot/imported/02_chest_close_2.wav-688ad175f5b7cb40693d0bdce2f3b8d5.sample"
+
+[deps]
+
+source_file="res://assets/sound effects/minifantasy_dungeon_sound_effects/02_chest_close_2.wav"
+dest_files=["res://.godot/imported/02_chest_close_2.wav-688ad175f5b7cb40693d0bdce2f3b8d5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

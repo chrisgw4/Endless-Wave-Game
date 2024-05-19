@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cb0d7vq85n4tk"
+path="res://.godot/imported/16_human_walk_stone_3.wav-04d7f0496f89378c59b69bb9fa881e5b.sample"
+
+[deps]
+
+source_file="res://assets/sound effects/minifantasy_dungeon_sound_effects/16_human_walk_stone_3.wav"
+dest_files=["res://.godot/imported/16_human_walk_stone_3.wav-04d7f0496f89378c59b69bb9fa881e5b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

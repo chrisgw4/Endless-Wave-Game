@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cygpbjfpwe6fs"]
+
+[ext_resource type="Script" path="res://scenes/titlescreen/title_screen.gd" id="1_llu3g"]
+[ext_resource type="Texture2D" uid="uid://6a4ncp6x3qfh" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/ui (new)/menu_button.png" id="1_tpq6h"]
+[ext_resource type="Texture2D" uid="uid://jear7m6agj06" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/ui (new)/menu_button_press.png" id="2_jrpt2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vullw"]
+
+[node name="TitleScreen" type="CanvasLayer"]
+script = ExtResource("1_llu3g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("PlaceholderTexture2D_vullw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[node name="PlayButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 116.0
+offset_top = 156.0
+offset_right = 212.0
+offset_bottom = 188.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_tpq6h")
+texture_pressed = ExtResource("2_jrpt2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 166.0
+offset_top = 162.0
+offset_right = 274.0
+offset_bottom = 213.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Play"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

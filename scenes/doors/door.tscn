@@ -1,0 +1,305 @@
+[gd_scene load_steps=27 format=3 uid="uid://3ercrtjgg0lq"]
+
+[ext_resource type="Script" path="res://scenes/doors/door.gd" id="1_bm767"]
+[ext_resource type="Texture2D" uid="uid://baw62b6klldu3" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_closed.png" id="1_dc70b"]
+[ext_resource type="Texture2D" uid="uid://ciyob0h1e2lf8" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f0.png" id="1_gyacl"]
+[ext_resource type="Texture2D" uid="uid://bli231ccw7vka" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f1.png" id="2_lvnvc"]
+[ext_resource type="Texture2D" uid="uid://cupmji01md7ka" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f2.png" id="3_xpjax"]
+[ext_resource type="Texture2D" uid="uid://csw6gjybmhx5r" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f3.png" id="4_15gx1"]
+[ext_resource type="Texture2D" uid="uid://bvflcpfkfwr7b" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f4.png" id="5_msknl"]
+[ext_resource type="Texture2D" uid="uid://d33t5x1uaujh" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f5.png" id="6_wropu"]
+[ext_resource type="Texture2D" uid="uid://b4obip6t8degs" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f6.png" id="7_614of"]
+[ext_resource type="Texture2D" uid="uid://ct3nl7hlv53o8" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f7.png" id="8_5dwgp"]
+[ext_resource type="Texture2D" uid="uid://cc6d7pcdbiy2o" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f8.png" id="9_ngpr5"]
+[ext_resource type="Texture2D" uid="uid://6l6qj52kw43p" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f9.png" id="10_xonvd"]
+[ext_resource type="Texture2D" uid="uid://cywqctus2ilm" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f10.png" id="11_h7mcb"]
+[ext_resource type="Texture2D" uid="uid://girjhx0jwys" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f11.png" id="12_vosto"]
+[ext_resource type="Texture2D" uid="uid://b3gyjtc4fenvd" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f12.png" id="13_pv10k"]
+[ext_resource type="Texture2D" uid="uid://cbywsopk3ddkq" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_anim_opening_f13.png" id="14_pk83e"]
+[ext_resource type="Texture2D" uid="uid://ccvap0p13fked" path="res://assets/v1.1 dungeon crawler 16X16 pixel pack/tiles/wall/door_fullyopen.png" id="16_sgnxu"]
+[ext_resource type="AudioStream" uid="uid://p6c0seatjhp1" path="res://assets/sound effects/minifantasy_dungeon_sound_effects/06_door_close_1.mp3" id="18_4mj17"]
+[ext_resource type="AudioStream" uid="uid://lg1wla58hmk2" path="res://assets/sound effects/minifantasy_dungeon_sound_effects/01_chest_open_3.wav" id="19_eh8sq"]
+[ext_resource type="AudioStream" uid="uid://b363736lp8ik" path="res://assets/sound effects/minifantasy_dungeon_sound_effects/02_chest_close_2.wav" id="20_rfl7r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sh1s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dc70b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_gyacl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lvnvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xpjax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_15gx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_msknl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wropu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_614of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5dwgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ngpr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xonvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h7mcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vosto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pv10k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pk83e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_sgnxu")
+}],
+"loop": true,
+"name": &"open_door",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_whvqh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"open_door"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CloseSoundEffect:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OpenSoundEffect:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("OpenSoundEffect2:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qwqdh"]
+resource_name = "close_door"
+length = 1.5
+step = 0.075
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.075, 0.15, 0.225, 0.3, 0.375, 0.45, 0.525, 0.6, 0.675, 0.75, 0.825),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [15, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CloseSoundEffect:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_cmpjj"]
+resource_name = "open_door"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"open_door"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OpenSoundEffect:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OpenSoundEffect2:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cbmps"]
+_data = {
+"RESET": SubResource("Animation_whvqh"),
+"close_door": SubResource("Animation_qwqdh"),
+"open_door": SubResource("Animation_cmpjj")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbm2b"]
+
+[node name="Door" type="StaticBody2D"]
+script = ExtResource("1_bm767")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0sh1s")
+animation = &"open_door"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cbmps")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_kbm2b")
+
+[node name="CloseSoundEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_4mj17")
+volume_db = -10.0
+max_distance = 1500.0
+attenuation = 10.9283
+bus = &"Sound Effects"
+
+[node name="OpenSoundEffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_eh8sq")
+volume_db = -10.0
+max_distance = 1500.0
+attenuation = 10.9283
+bus = &"Sound Effects"
+
+[node name="OpenSoundEffect2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_rfl7r")
+volume_db = -10.0
+max_distance = 1500.0
+attenuation = 10.9283
+bus = &"Sound Effects"

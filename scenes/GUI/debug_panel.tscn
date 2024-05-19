@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://vcaxf5e8be6l"]
+
+[ext_resource type="Script" path="res://scenes/GUI/debug_panel.gd" id="1_dh64p"]
+
+[node name="DebugPanel" type="HFlowContainer"]
+custom_minimum_size = Vector2(400, 0)
+offset_right = 247.0
+offset_bottom = 540.0
+mouse_filter = 2
+script = ExtResource("1_dh64p")
+
+[node name="EnemyButtons" type="VFlowContainer" parent="."]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EnemyButtons"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Enemies"
+
+[node name="BatSpawn" type="Button" parent="EnemyButtons"]
+layout_mode = 2
+text = "Spawn Bat"
+
+[node name="SlimeSpawn" type="Button" parent="EnemyButtons"]
+layout_mode = 2
+text = "Spawn Slime"
+
+[node name="ItemButtons" type="VFlowContainer" parent="."]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ItemButtons"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Items"
+
+[node name="CoinSpawn" type="Button" parent="ItemButtons"]
+layout_mode = 2
+text = "Spawn Coin"
+
+[node name="HeartSpawn" type="Button" parent="ItemButtons"]
+layout_mode = 2
+text = "Spawn Heart"
+
+[node name="GeneralPurpose" type="VFlowContainer" parent="."]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GeneralPurpose"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Cheats"
+
+[node name="Heal" type="Button" parent="GeneralPurpose"]
+layout_mode = 2
+text = "Heal (1)"
+
+[node name="Damage" type="Button" parent="GeneralPurpose"]
+layout_mode = 2
+text = "Damage (1)"
+
+[node name="StrengthIncrease" type="Button" parent="GeneralPurpose"]
+layout_mode = 2
+text = "Increase STR (1)"
+
+[node name="HealthIncrease" type="Button" parent="GeneralPurpose"]
+layout_mode = 2
+text = "Increase HP (1)"
+
+[node name="SetCoins0" type="Button" parent="GeneralPurpose"]
+layout_mode = 2
+text = "Set Coins to 0"
+
+[connection signal="pressed" from="EnemyButtons/BatSpawn" to="." method="_on_bat_spawn_pressed"]
+[connection signal="pressed" from="EnemyButtons/SlimeSpawn" to="." method="_on_slime_spawn_pressed"]
+[connection signal="pressed" from="ItemButtons/CoinSpawn" to="." method="_on_coin_spawn_pressed"]
+[connection signal="pressed" from="ItemButtons/HeartSpawn" to="." method="_on_heart_spawn_pressed"]
+[connection signal="pressed" from="GeneralPurpose/Heal" to="." method="_on_heal_pressed"]
+[connection signal="pressed" from="GeneralPurpose/Damage" to="." method="_on_damage_pressed"]
+[connection signal="pressed" from="GeneralPurpose/StrengthIncrease" to="." method="_on_strength_increase_pressed"]
+[connection signal="pressed" from="GeneralPurpose/HealthIncrease" to="." method="_on_health_increase_pressed"]
+[connection signal="pressed" from="GeneralPurpose/SetCoins0" to="." method="_on_set_coins_0_pressed"]
